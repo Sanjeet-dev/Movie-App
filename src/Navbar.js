@@ -1,19 +1,41 @@
 import { Component } from "react";
+import styled from "styled-components";
+
+const Nav = styled.div`
+  width: 98vw;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: cadetblue;
+  margin-bottom: 10px;
+  padding-right: 30px;
+`;
+
+const Title = styled.div`
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  padding-top: 0.8rem;
+  padding-left: 20px;
+`;
+
 class Navbar extends Component {
   render() {
     return (
       <>
-        <div style={styles.nav}>
-          <div style={styles.title}>movie-app</div>
+        <Nav>
+          <Title>movie-app</Title>
           <div style={styles.cart}>
             <img
               src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
               alt=""
               style={styles.cartIcon}
             />
-            <span style={styles.num}>0</span>
+            <span style={styles.num}>3</span>
           </div>
-        </div>
+        </Nav>
       </>
     );
   }
@@ -22,37 +44,25 @@ class Navbar extends Component {
 export default Navbar;
 
 const styles = {
-  nav: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    background: "#7F00FF",
-    marginBottom: 10,
-    paddingRight: 30,
-  },
-  title: {
-    fontSize: 24,
-    color: "white",
-    fontWeight: 600,
-    fontFamily: "'Montserrat',sans-serif",
-    textTransform: "uppercase",
-    paddingLeft: 20,
-  },
   cart: {
     display: "flex",
     position: "relative",
+    paddingLeft: 35,
   },
   cartIcon: {
     width: 30,
     height: 30,
+    paddingTop: "0.8rem",
   },
   num: {
-    color: "white",
-    fontSize: 13,
+    color: "black",
+    fontSize: 10,
+    backgroundColor: "yellow",
+    border: "2px solid yellow",
+    borderRadius: "45%",
     fontWeight: 500,
     position: "absolute",
-    borderRadius: 50,
-    top: 0,
+    top: "0.8rem",
     right: 0,
   },
 };
