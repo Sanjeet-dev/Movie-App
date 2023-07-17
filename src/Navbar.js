@@ -20,6 +20,28 @@ const Title = styled.div`
   padding-top: 0.8rem;
   padding-left: 20px;
 `;
+const Cart = styled.div`
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+`;
+
+const Count = styled.span`
+  color: black;
+  font-size: 10px;
+  background-color: yellow;
+  border: 2px solid yellow;
+  border-radius: 45%;
+  font-weight: 500;
+  position: absolute;
+  top: 0.8rem;
+  right: 0;
+`;
+const MovieCart = styled.img`
+  width: 30px;
+  height: 30px;
+  padding-top: 0.8rem;
+`;
 
 class Navbar extends Component {
   render() {
@@ -27,14 +49,13 @@ class Navbar extends Component {
       <>
         <Nav>
           <Title>movie-app</Title>
-          <div style={styles.cart}>
-            <img
+          <Cart>
+            <MovieCart
               src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
-              alt=""
-              style={styles.cartIcon}
+              alt="shopping-cart"
             />
-            <span style={styles.num}>3</span>
-          </div>
+            <Count>3</Count>
+          </Cart>
         </Nav>
       </>
     );
@@ -42,27 +63,3 @@ class Navbar extends Component {
 }
 
 export default Navbar;
-
-const styles = {
-  cart: {
-    display: "flex",
-    position: "relative",
-    paddingLeft: 35,
-  },
-  cartIcon: {
-    width: 30,
-    height: 30,
-    paddingTop: "0.8rem",
-  },
-  num: {
-    color: "black",
-    fontSize: 10,
-    backgroundColor: "yellow",
-    border: "2px solid yellow",
-    borderRadius: "45%",
-    fontWeight: 500,
-    position: "absolute",
-    top: "0.8rem",
-    right: 0,
-  },
-};
