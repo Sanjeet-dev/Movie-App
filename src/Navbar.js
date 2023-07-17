@@ -45,6 +45,7 @@ const MovieCart = styled.img`
 
 class Navbar extends Component {
   render() {
+    const { cartCount } = this.props;
     return (
       <>
         <Nav>
@@ -54,7 +55,7 @@ class Navbar extends Component {
               src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
               alt="shopping-cart"
             />
-            <Count>3</Count>
+            <Count>{cartCount}</Count>
           </Cart>
         </Nav>
       </>

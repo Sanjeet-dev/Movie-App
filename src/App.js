@@ -44,19 +44,28 @@ class App extends React.Component {
     });
   };
   handleCartBtn = (movie) => {
-    const { movies } = this.state;
+    let { movies, cartCount } = this.state;
     const mid = this.state.movies.indexOf(movie);
     movies[mid].cart = !movies[mid].cart;
+    console.log(movies[mid].cart);
+
+    if (movies[mid].cart) {
+      cartCount += 1;
+    } else {
+      cartCount -= 1;
+    }
+
     this.setState({
       movies,
+      cartCount,
     });
   };
 
   render() {
-    const { movies } = this.state;
+    const { movies, cartCount } = this.state;
     return (
       <>
-        <Navbar />
+        <Navbar cartCount={cartCount} />
         <MovieList
           movies={movies}
           addStars={this.handleIncStars}
