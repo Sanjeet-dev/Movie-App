@@ -43,24 +43,22 @@ const MovieCart = styled.img`
   padding-top: 0.8rem;
 `;
 
-class Navbar extends Component {
-  render() {
-    const { cartCount } = this.props;
-    return (
-      <>
-        <Nav>
-          <Title>movie-app</Title>
-          <Cart>
-            <MovieCart
-              src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
-              alt="shopping-cart"
-            />
-            <Count>{cartCount}</Count>
-          </Cart>
-        </Nav>
-      </>
-    );
-  }
-}
+const Navbar = (props) => {
+  const { cartCount } = props;
+  return (
+    <>
+      <Nav>
+        <Title>movie-app</Title>
+        <Cart>
+          <MovieCart
+            src="https://cdn-icons-png.flaticon.com/128/4290/4290854.png"
+            alt="shopping-cart"
+          />
+          <Count>{cartCount}</Count>
+        </Cart>
+      </Nav>
+    </>
+  );
+};
 
 export default Navbar;
