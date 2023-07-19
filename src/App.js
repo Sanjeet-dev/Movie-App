@@ -11,7 +11,7 @@ class App extends React.Component {
     };
   }
 
-  handleIncStar = (movie) => {
+  handleIncStars = (movie) => {
     const { movies } = this.state;
     const mid = this.state.movies.indexOf(movie);
     if (movies[mid].stars >= 5) {

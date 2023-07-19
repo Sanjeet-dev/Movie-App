@@ -1,12 +1,9 @@
 import React from "react";
 import { FaRupeeSign } from "react-icons/fa";
-// import { Component } from "react";
 
 const MovieCard = (props) => {
-  // lets add props in component
-
   // destructuring the prop values:
-  const { movies, addStars, removeStars, handleFav, handleCart } = props;
+  const { movies, removeStars, addStars, handleFav, handleCart } = props;
   const { title, plot, price, rating, img, stars, fav, cart } = props.movies;
   return (
     <div className="main">
